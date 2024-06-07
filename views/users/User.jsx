@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
 import { useParams } from "react-router-dom";
 import flor from '../../src/assets/flor.svg';
 import PrevDescription from './components/prevDescription';
@@ -71,40 +71,39 @@ const User = () => {
     }, []);
 
     return (
-        <div style={{display: "flex", justifyContent: "center"}}>
-            <div>
+        <div className="h-screen w-full flex flex-row justify-center items-center">
+            <div className="w-1/2 h-full flex justify-center items-center">
+            <div className="mx-4 w-full h-full flex justify-center items-center">
                 <CardInfo user={users}/>
             </div>
-        <div>
-            <div>User</div>
-            <div>
-                <img src={flor} alt="user" style={{ width: '100px', height: '100px' }} />
             </div>
-            <div>
-                <PrevDescription descriptions={descriptions} /> {/* Capitalize the component name */}
+        <div className="w-1/2 h-full flex justify-center items-center">
+                
+                {/* <PrevDescription descriptions={descriptions} /> Capitalize the component name */}
+
+            <div className="w-full h-1/2 m-4 rounded-2xl flex justify-center items-center flex-col">
                 <p>Description</p>
                 <textarea 
                     name="description" 
                     value={form.description} 
                     onChange={handleInputChange} 
+                    className="w-2/3 h-1/2 bg-gray-100 rounded-xl"
                 />
                 <p>Prescription</p>
                 <textarea 
                     name="prescription" 
                     value={form.prescription} 
                     onChange={handleInputChange} 
-                />
+                    className="w-2/3 h-1/2 bg-gray-100 rounded-xl"
 
-            </div>
+
+                />
             <button
-                style={{
-                    backgroundColor: 'green',
-                    color: 'white',
-                    padding: '10px',
-                    borderRadius: '5px',
-                    border: 'none',
-                    cursor: 'pointer'
-                }} onClick={handleSubmitUpdate}>click me</button>
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4"
+            onClick={handleSubmitUpdate}>click me</button>
+            </div>
+
+
         </div>
         </div>
     );
