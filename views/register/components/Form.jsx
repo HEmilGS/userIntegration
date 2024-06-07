@@ -46,10 +46,14 @@ function Form() {
         }
     };
 
+    const handleNavigate = (route) => {
+        window.location.pathname = route;
+      };
+
     return (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+        <form onSubmit={handleSubmit}  className='flex justify-center items-center flex-col'>
             <input
-                style={{ height: '30px', marginBottom: '10px', width: '300px' }}
+                className="m-4 p-2 outline outline-black rounded-xl w-80"
                 type="text"
                 name="userName"
                 placeholder="Nombre"
@@ -57,7 +61,7 @@ function Form() {
                 onChange={handleChange}
             />
             <input
-                style={{ height: '30px', marginBottom: '10px', width: '300px' }}
+                className="m-4 p-2 outline outline-black rounded-xl w-80"
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -65,7 +69,7 @@ function Form() {
                 onChange={handleChange}
             />
             <input
-                style={{ height: '30px', marginBottom: '10px', width: '300px' }}
+                className="m-4 p-2 outline outline-black rounded-xl w-80"
                 type="text"
                 name="nacionality"
                 placeholder="Nacionality"
@@ -73,7 +77,7 @@ function Form() {
                 onChange={handleChange}
             />
             <input
-                style={{ height: '30px', marginBottom: '10px', width: '300px' }}
+                className="m-4 p-2 outline outline-black rounded-xl w-80"
                 type="text"
                 name="emergencyContact"
                 placeholder="EmergencyContact"
@@ -81,20 +85,20 @@ function Form() {
                 onChange={handleChange}
             />
             <input
-                style={{ height: '30px', marginBottom: '10px', width: '300px' }}
+                className="m-4 p-2 outline outline-black rounded-xl w-80"
                 type="number"
                 name="age"
                 placeholder="Age"
                 onChange={handleChange}
             />
             <input
-                style={{ height: '30px', marginBottom: '10px', width: '300px' }}
+                className="m-4 p-2 outline outline-black rounded-xl w-80"
                 name="ocupation"
                 placeholder='Ocupation'
                 value={form.ocupation}
                 onChange={handleChange}
             />
-            <button type="submit" style={{ height: '25px', backgroundColor: 'green', border: 'none', width: '150px', borderRadius: '5px' }}>
+            <button type="submit" className='bg-[#269fb4] w-1/2 rounded-md mt-3'>
                 Submit
             </button>
         </form>

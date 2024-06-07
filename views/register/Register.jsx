@@ -1,17 +1,12 @@
 import Form from '../register/components/Form';
-import form from '../../src/assets/form.svg';
+
 
 function Register() {
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', minHeight: '100vh' }}>
-            <div style={{ width: '50%', backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px 0' }}>
-                <div style={{ marginRight: '20px' }}>
-                    <h1>Register</h1>
-                    <img src={form} alt="formImage"  />
-                </div>
-                <div style={{ width: '50%' }}>
+        <div className='bg-[#7ed7e2] h-screen flex flex-row justify-center items-center'>
+                <div className='bg-white w-1/2 h-3/4 rounded-3xl flex justify-center items-center flex-col' >
+                    <h1 className='text-2xl mb-3'>Create account</h1>
                     <Form />
-                </div>
             </div>
         </div>
     );
