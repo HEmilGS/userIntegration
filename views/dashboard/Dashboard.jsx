@@ -2,7 +2,7 @@ import Card from "../dashboard/components/card";
 import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-function Dashboard({name}) {
+function Dashboard({ name }) {
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
@@ -20,17 +20,18 @@ function Dashboard({name}) {
   }, []);
 
   return (
-      <div>
-        <div>
-          {users.map((user) => {
-              if (name && !user.name.includes(name)) return null;
-                return (<div key={user.id}>
-                    <Card user={user} />
-                  </div>)
-            }
-          )}
-        </div>
+    <div className="flex justify-center items-center w-screen h-full bg-gray-100">
+      <div className="flex flex-row flex-wrap justify-center align-center">
+        {users.map((user) => {
+          if (name && !user.name.includes(name)) return null;
+          return (
+            <div key={user.id}>
+              <Card user={user} />
+            </div>
+          );
+        })}
       </div>
+    </div>
   );
 }
 
