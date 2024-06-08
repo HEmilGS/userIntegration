@@ -97,21 +97,21 @@ const User = () => {
             <CardInfo user={users} />
           </div>
         </div>
-        <div className="w-1/2 h-full flex justify-center items-center">
-          <div className="w-full h-1/2 m-4 rounded-2xl flex justify-center items-center flex-col">
+        <div className="w-1/4 h-full flex justify-center items-center ">
+          <div className="w-full h-3/4 m-4 rounded-2xl flex justify-center items-center flex-col">
             <p>Description</p>
             <textarea
               name="description"
               value={form.description}
               onChange={handleInputChange}
-              className="w-2/3 h-1/2 bg-gray-100 rounded-xl"
+              className="w-full h-1/2 bg-gray-100 rounded-xl"
             />
             <p>Prescription</p>
             <textarea
               name="prescription"
               value={form.prescription}
               onChange={handleInputChange}
-              className="w-2/3 h-[29rem] bg-gray-100 rounded-xl"
+              className="w-full h-3/4 bg-gray-100 rounded-xl"
             />
             <div className="flex flex-row justify-center items-center">
 
@@ -127,13 +127,18 @@ const User = () => {
             </button>
               </div>
           </div>
+
+        </div>
+
+        <div className="w-1/4 h-full flex justify-center items-center outline">
+        {/* espacio para el rag */}
         </div>
       </div>
       <div>
       <h1 className="text-medium font-semibold text-gray-800 font-serif ml-4">Previous Descriptions</h1>
       </div>
 
-      <div className=" w-full h-[32rem] overflow-x-scroll flex flex-row">
+      <div className=" w-full h-[18rem] overflow-x-scroll flex flex-row">
         <PrevDescription descriptions={descriptions}/> 
 
       </div>

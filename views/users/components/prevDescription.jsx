@@ -1,7 +1,7 @@
 
 const PrevDescription = ({descriptions}) => {
   return ( 
-    <div className="flex flex-row flex-wrap overflow-x-scroll flex-shrink-0 h-full">
+    <div className="flex flex-row flex-wrap items-end overflow-x-scroll flex-shrink-0 h-full">
       
       { descriptions?.map((des, idx) => (  //descriptions.length === prescriptions.length &&
         
