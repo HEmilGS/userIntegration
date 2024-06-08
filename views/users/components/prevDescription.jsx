@@ -1,13 +1,24 @@
 
 const PrevDescription = ({descriptions}) => {
   return ( 
-    <div>
-      <h1>Previous Description</h1>
-      {descriptions?.map((des, idx) => (
-        <p key={idx}>{des.description}</p> //this is the description, make it a style
+    <div className="flex flex-row flex-wrap overflow-x-scroll flex-shrink-0 h-full">
+      
+      { descriptions?.map((des, idx) => (  //descriptions.length === prescriptions.length &&
+        
+        <div className="w-[32rem] h-[12rem] m-2 overflow-y-scroll flex justify-start items-center flex-col bg-slate-300 rounded-xl"> 
+        <h1 className="mt-2 font-medium">Description</h1>
+        <p key={idx} >{des.description}</p> 
+        <h1 className="mt-2 font-medium">Prescription:</h1>
+        <p key={idx} >{des.prescription}</p>
+        {/* <p key={idx} >{prescriptions[idx].prescription}</p> */}
+        </div>
       ))}
+
+
+
     </div>
   )
-}
+  }
+  
+  export default PrevDescription
 
-export default PrevDescription
