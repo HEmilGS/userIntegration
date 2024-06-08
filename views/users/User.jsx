@@ -8,7 +8,6 @@ const User = () => {
   const { id } = useParams(); // destructure the id from useParams
   const [descriptions, setDescriptions] = useState([]);
   const [users, setUsers] = useState([]);
-  const [prescription , setPrescription] = useState([]);
 
 
   // add state for description
@@ -36,22 +35,11 @@ const User = () => {
     console.log("Fetching Description");
     const response = await fetch(`http://localhost:3000/descriptions/${id}`); // correct URL concatenation
     const data = await response.json();
-    console.log("hola vro")
     console.log(data);
     setDescriptions(data);
     console.log(data);
     return data;
   };
-
-//   const fetchPrescription = async () => {
-//     console.log("ID from users", id);
-//     console.log("Fetching Description");
-//     const response = await fetch(`http://localhost:3000/prescriptions/${id}`); // correct URL concatenation
-//     const data = await response.json();
-//     setPrescription(data);
-//     console.log(data);
-//     return data;
-//   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -89,8 +77,18 @@ const User = () => {
     }
   };
 
-
-
+  const handleGenerateHelp = async () => {
+    const response = await fetch(`http://localhost:3000/chat/gemini`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prompt: form.description }), // Include the prompt from the form
+    });
+    const data = await response.json();
+    console.log(data);
+    setForm({ ...form, prescription: data.response });
+}
   return (
     <div className="h-screen w-screen flex flex-col">
       <div className="h-screen w-full flex flex-row justify-center items-center">
@@ -115,12 +113,19 @@ const User = () => {
               onChange={handleInputChange}
               className="w-2/3 h-[29rem] bg-gray-100 rounded-xl"
             />
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4"
-              onClick={handleSubmitUpdate}
-            >
-              click me
+            <div className="flex flex-row justify-center items-center">
+
+            <button className= "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 " onClick={handleGenerateHelp}>
+            Generate help
             </button>
+
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 ml-2"
+              onClick={handleSubmitUpdate}
+              >
+              Save
+            </button>
+              </div>
           </div>
         </div>
       </div>
