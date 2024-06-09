@@ -46,9 +46,6 @@ function Form() {
         }
     };
 
-    const handleNavigate = (route) => {
-        window.location.pathname = route;
-      };
 
     return (
         <form onSubmit={handleSubmit}  className='flex justify-center items-center flex-col'>

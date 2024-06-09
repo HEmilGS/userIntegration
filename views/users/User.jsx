@@ -14,6 +14,8 @@ const User = () => {
   const [form, setForm] = useState({
     description: "",
     prescription: "",
+    ragQuestion: "",
+    ragAnswer: "",
   });
 
   useEffect(() => {
@@ -86,9 +88,26 @@ const User = () => {
         body: JSON.stringify({ prompt: form.description }), // Include the prompt from the form
     });
     const data = await response.json();
-    console.log(data);
     setForm({ ...form, prescription: data.response });
 }
+
+  const handleWriteOnPrescription = async () => {
+    setForm({ ...form, prescription: form.ragAnswer})
+  }
+
+  const handleAskRag = async () => {
+    const response = await fetch(`http://localhost:3000/chat/context`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: form.ragQuestion })
+    });
+    console.log(form.ragQuestion)
+    const data = await response.json();
+    setForm({ ...form, ragAnswer: data.response });
+  }
+
   return (
     <div className="h-screen w-screen flex flex-col">
       <div className="h-screen w-full flex flex-row justify-center items-center">
@@ -99,19 +118,20 @@ const User = () => {
         </div>
         <div className="w-1/4 h-full flex justify-center items-center ">
           <div className="w-full h-3/4 m-4 rounded-2xl flex justify-center items-center flex-col">
-            <p>Description</p>
+
             <textarea
               name="description"
               value={form.description}
               onChange={handleInputChange}
-              className="w-full h-1/2 bg-gray-100 rounded-xl"
+              className="w-full h-1/2 bg-gray-100 rounded-xl m-3"
+              placeholder="Description"
             />
-            <p>Prescription</p>
             <textarea
               name="prescription"
               value={form.prescription}
               onChange={handleInputChange}
-              className="w-full h-3/4 bg-gray-100 rounded-xl"
+              className="w-full h-3/4 bg-gray-100 rounded-xl m-3"
+              placeholder="Prescription"
             />
             <div className="flex flex-row justify-center items-center">
 
@@ -130,8 +150,38 @@ const User = () => {
 
         </div>
 
-        <div className="w-1/4 h-full flex justify-center items-center outline">
+        <div className="w-1/4 h-full flex justify-center items-center ">
         {/* espacio para el rag */}
+        <div className="w-full h-3/4 m-4 rounded-2xl flex justify-center items-center flex-col">
+
+            <textarea
+              name="ragQuestion"
+              value={form.ragQuestion}
+              onChange={handleInputChange}
+              className="w-full h-1/2 bg-gray-100 rounded-xl m-3"
+              placeholder="Rag question"
+            />
+            <textarea
+              name="ragAnswer"
+              value={form.ragAnswer}
+              onChange={handleInputChange}
+              className="w-full h-3/4 bg-gray-100 rounded-xl m-3"
+              placeholder="Rag answer"
+            />
+            <div className="flex flex-row justify-center items-center">
+
+            <button className= "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 " onClick={handleAskRag}>
+            Ask Rag
+            </button>
+
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 ml-2"
+              onClick={handleWriteOnPrescription}
+              >
+                write on prescription
+            </button>
+              </div>
+          </div>
         </div>
       </div>
       <div>
