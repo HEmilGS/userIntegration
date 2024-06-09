@@ -50,7 +50,7 @@ function Form() {
     return (
         <form onSubmit={handleSubmit}  className='flex justify-center items-center flex-col'>
             <input
-                className="m-4 p-2 outline outline-black rounded-xl w-80"
+                className="m-4 p-2 outline outline-black rounded-xl w-80 bg-borders"
                 type="text"
                 name="userName"
                 placeholder="Nombre"
@@ -58,7 +58,7 @@ function Form() {
                 onChange={handleChange}
             />
             <input
-                className="m-4 p-2 outline outline-black rounded-xl w-80"
+                className="m-4 p-2 outline outline-black rounded-xl w-80 bg-borders"
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -66,7 +66,7 @@ function Form() {
                 onChange={handleChange}
             />
             <input
-                className="m-4 p-2 outline outline-black rounded-xl w-80"
+                className="m-4 p-2 outline outline-black rounded-xl w-80 bg-borders"
                 type="text"
                 name="nacionality"
                 placeholder="Nacionality"
@@ -74,7 +74,7 @@ function Form() {
                 onChange={handleChange}
             />
             <input
-                className="m-4 p-2 outline outline-black rounded-xl w-80"
+                className="m-4 p-2 outline outline-black rounded-xl w-80 bg-borders"
                 type="text"
                 name="emergencyContact"
                 placeholder="EmergencyContact"
@@ -82,20 +82,20 @@ function Form() {
                 onChange={handleChange}
             />
             <input
-                className="m-4 p-2 outline outline-black rounded-xl w-80"
+                className="m-4 p-2 outline outline-black rounded-xl w-80 bg-borders"
                 type="number"
                 name="age"
                 placeholder="Age"
                 onChange={handleChange}
             />
             <input
-                className="m-4 p-2 outline outline-black rounded-xl w-80"
+                className="m-4 p-2 outline outline-black rounded-xl w-80 bg-borders"
                 name="ocupation"
                 placeholder='Ocupation'
                 value={form.ocupation}
                 onChange={handleChange}
             />
-            <button type="submit" className='bg-[#269fb4] w-1/2 rounded-md mt-3'>
+            <button type="submit" className='bg-blue w-1/2 rounded-md mt-3'>
                 Submit
             </button>
         </form>

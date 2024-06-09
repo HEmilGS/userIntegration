@@ -7,7 +7,16 @@ export default {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'background': '#28536B',
+        'orange': '#C2948A',
+        'blue' : '#7EA8BE',
+        'borders' : '#F6F0ED',
+        'details' : '#BBB193',
+        'header' : '#1C3A4A',
+        },
+    },
   },
   plugins: [],
 }

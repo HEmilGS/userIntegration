@@ -20,7 +20,7 @@ function Dashboard({ name }) {
   }, []);
 
   return (
-    <div className="flex justify-center items-center w-screen h-full bg-gray-100">
+    <div className="flex justify-center items-center w-screen h-full bg-background">
       <div className="flex flex-row flex-wrap justify-center align-center">
         {users.map((user) => {
           if (name && !user.name.includes(name)) return null;

@@ -109,7 +109,7 @@ const User = () => {
   }
 
   return (
-    <div className="h-screen w-screen flex flex-col">
+    <div className="h-screen w-screen flex flex-col bg-background">
       <div className="h-screen w-full flex flex-row justify-center items-center">
         <div className="w-1/2 h-full flex justify-center items-center">
           <div className="mx-4 w-full h-full flex justify-center items-center">
@@ -123,24 +123,24 @@ const User = () => {
               name="description"
               value={form.description}
               onChange={handleInputChange}
-              className="w-full h-1/2 bg-gray-100 rounded-xl m-3"
+              className="w-full h-1/2 bg-borders rounded-xl m-3 shadow-lg"
               placeholder="Description"
             />
             <textarea
               name="prescription"
               value={form.prescription}
               onChange={handleInputChange}
-              className="w-full h-3/4 bg-gray-100 rounded-xl m-3"
+              className="w-full h-3/4 bg-borders rounded-xl m-3 shadow-lg"
               placeholder="Prescription"
             />
             <div className="flex flex-row justify-center items-center">
 
-            <button className= "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 " onClick={handleGenerateHelp}>
+            <button className= "bg-blue hover:bg-[#5287A3] text-white font-bold py-2 px-4 rounded my-4 " onClick={handleGenerateHelp}>
             Generate help
             </button>
 
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 ml-2"
+              className="bg-blue hover:bg-[#5287A3] text-white font-bold py-2 px-4 rounded my-4 ml-2"
               onClick={handleSubmitUpdate}
               >
               Save
@@ -158,24 +158,24 @@ const User = () => {
               name="ragQuestion"
               value={form.ragQuestion}
               onChange={handleInputChange}
-              className="w-full h-1/2 bg-gray-100 rounded-xl m-3"
+              className="w-full h-1/2 bg-borders rounded-xl m-3 shadow-lg"
               placeholder="Rag question"
             />
             <textarea
               name="ragAnswer"
               value={form.ragAnswer}
               onChange={handleInputChange}
-              className="w-full h-3/4 bg-gray-100 rounded-xl m-3"
+              className="w-full h-3/4 bg-borders rounded-xl m-3 shadow-lg"
               placeholder="Rag answer"
             />
             <div className="flex flex-row justify-center items-center">
 
-            <button className= "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 " onClick={handleAskRag}>
+            <button className= "bg-blue hover:bg-[#5287A3] text-white font-bold py-2 px-4 rounded my-4 " onClick={handleAskRag}>
             Ask Rag
             </button>
 
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 ml-2"
+              className="bg-blue hover:bg-[#5287A3] text-white font-bold py-2 px-4 rounded my-4 ml-2"
               onClick={handleWriteOnPrescription}
               >
                 write on prescription
@@ -185,7 +185,7 @@ const User = () => {
         </div>
       </div>
       <div>
-      <h1 className="text-medium font-semibold text-gray-800 font-serif ml-4">Previous Descriptions</h1>
+      <h1 className="text-medium font-semibold text-borders font-serif ml-4">Previous Descriptions</h1>
       </div>
 
       <div className=" w-full h-[18rem] overflow-x-scroll flex flex-row">

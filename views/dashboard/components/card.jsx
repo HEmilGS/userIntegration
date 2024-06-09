@@ -13,16 +13,16 @@ function Card({ user }) {
   };
 
   return (
-    <div className="m-4">
+    <div className="m-4 bg-blue shadow-xl ">
       <div
-        className="flex flex-col justify-center content-center shadow-lg h-60 w-60"
+        className="flex flex-col justify-center content-center  h-60 w-60 "
         onClick={handleClick}
       >
         <div className="flex justify-center content-center">
           <img src={userImage} alt="usuario vro" className="h-20" />{" "}
         </div>
-        <div className="flex justify-center content-center">{user.name}</div>
-        <div className="flex justify-center content-center">{user.email}</div>
+        <div className="flex justify-center content-center text-borders">{user.name}</div>
+        <div className="flex justify-center content-center text-borders">{user.email}</div>
       </div>
     </div>
   );

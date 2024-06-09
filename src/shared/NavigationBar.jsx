@@ -18,27 +18,27 @@ const NavigationBar = ({ children }) => {
 
   return (
     <div className="flex flex-col h-screen w-full relative">
-      <div className="flex flex-row  shadow-lg z-0 fixed top-0 left-0 right-0">
+      <div className="flex flex-row  shadow-lg z-0 fixed top-0 left-0 right-0 bg-header">
         <div
           onClick={() => handleNavigate("/")}
           className="flex cursor-pointer m-4 p-2"
         >
-          <Home size={24} />
-          <p className="mx-2">Dashboard</p>
+          <Home size={24} className="stroke-borders" />
+          <p className="mx-2 text-white">Dashboard</p>
         </div>
         <div
           onClick={() => handleNavigate("/register")}
           className="flex cursor-pointer m-4 p-2"
         >
-          <LogIn size={24} />
-          <p className="mx-2">Register</p>
+          <LogIn size={24} className="stroke-borders" />
+          <p className="mx-2 text-white">Register</p>
         </div>
 
 
       <div className="w-full flex justify-end items-center">
-        <Search size={25}/>
+        <Search size={25} className="stroke-borders"/>
         <input
-          className="m-4 p-2 outline outline-black rounded-xl"
+          className="m-4 p-2 outline outline-borders rounded-xl"
           type="text"
           placeholder="Search users"
           onChange={handleNameChange}

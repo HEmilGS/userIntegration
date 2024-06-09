@@ -3,8 +3,8 @@ import userImage from '../../../src/assets/user.svg';
 
 const CardInfo = ({user}) => {
     return (
-        <div className='h-1/2 w-full  flex flex-row justify-start items-center rounded-2xl' >
-            <div className=' h-full w-1/2 flex flex-col justify-center items-center'>
+        <div className='h-2/3 w-full  flex flex-row justify-start items-center rounded-2xl bg-blue' >
+            <div className=' h-full w-1/2 flex flex-col justify-center items-center '>
             <img src={userImage} alt='user' className='h-40 w-40 rounded-full'/>
 
             <p className='text-2xl font-semibold text-gray-800 m-1 font-serif '>{user.name}</p>
@@ -12,7 +12,7 @@ const CardInfo = ({user}) => {
             </div>
 
             <div className='h-full w-1/2 grid grid-cols-2 justify-items-center content-center '>
-           <div className=' m-1.5 bg-gray-100 h-40 w-40 rounded-xl flex justify-start items-center flex-col'>
+           <div className=' m-1.5 bg-details h-40 w-40 rounded-xl flex justify-start items-center flex-col shadow-lg'>
             <div className='w-full h-1/2 flex justify-start items-start'>
                 <h1 className='m-2 font-semibold'>Nationality:</h1>
             </div>
@@ -24,7 +24,7 @@ const CardInfo = ({user}) => {
              
               </div>
 
-           <div className=' m-1.5 bg-gray-100 h-40 w-40 rounded-xl flex justify-start items-center flex-col'>
+           <div className=' m-1.5 bg-details h-40 w-40 rounded-xl flex justify-start items-center flex-col shadow-lg'>
             <div className='w-full h-1/2 flex justify-start items-start'>
                 <h1 className='m-2 font-semibold'> Emergency contact:</h1>
             </div>
@@ -36,7 +36,7 @@ const CardInfo = ({user}) => {
              
               </div>
 
-           <div className=' m-1.5 bg-gray-100 h-40 w-40 rounded-xl flex justify-start items-center flex-col'>
+           <div className=' m-1.5 bg-details h-40 w-40 rounded-xl flex justify-start items-center flex-col shadow-lg'>
             <div className='w-full h-1/2 flex justify-start items-start'>
                 <h1 className='m-2 font-semibold'>Age:</h1>
             </div>
@@ -48,7 +48,7 @@ const CardInfo = ({user}) => {
              
               </div>
 
-           <div className=' m-1.5 bg-gray-100 h-40 w-40 rounded-xl flex justify-start items-center flex-col'>
+           <div className=' m-1.5 bg-details h-40 w-40 rounded-xl flex justify-start items-center flex-col shadow-lg'>
             <div className='w-full h-1/2 flex justify-start items-start'>
                 <h1 className='m-2 font-semibold'>Ocupation:</h1>
             </div>
